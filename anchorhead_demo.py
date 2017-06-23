@@ -1,11 +1,11 @@
 # This file is basically a short demo of the game Anchorhead, by Michael Gentry.
 #   The text used is almost entirely taken from Anchorhead. The original game
-#   was made using Inform v6.15 (Library 6/7), and my demo version was made in
-#   Python 2.7. I created this file for Exercise 36 of Learn Python the Hard
+#   was made using Inform v6.15 (Library 6/7), and my demo version is intended
+#   for Python 2.7. I created this file for Exercise 36 of Learn Python the Hard
 #   Way, the goal of which is to make a game using the skills learned up to that
 #   point of the book. I thought the exercise would be much more interesting if
 #   I were to mimic a game I really enjoyed. For reference, the full game can be
-#   found at http://pr-if.org/play/anchorhead/ (at least as of this writing).
+#   found at http://pr-if.org/play/anchorhead/ (at least as of this writing.
 #                       -- Aron Neu, 6/11/2017
 
 # Import modules
@@ -104,7 +104,7 @@ def quit():
     choice = raw_input(prompt).lower()
     if choice in ("y", "yes", "quit", "exit"):
         print "\nUntil next time, then.\n"
-        sys.exit()
+        exit()
     else: print "\nBack to it, then!\n"
 
 
@@ -341,9 +341,10 @@ You start heading west along the winding lane but soon change your mind and turn
 You'll have plenty of time to explore Anchorhead once you've moved into your home. But first,
 you need to get those keys from the real estate agent.\n"""
             else:
+                print "Congratulations! You've finished my short demo of Anchorhead."
                 print "Once I'm better at Python, I will likely try to improve and expand upon this."
                 print "(But you might just want to play the real version in the meantime.)\n"
-                sys.exit()
+                exit()
         elif choice == "se":
             alley()
         else:
@@ -398,9 +399,6 @@ High up on the wall of the northern building there is a narrow, transom-style wi
             print """
 Unfortunately, the fence is too far from the window to be of much use.  It's also
 intimidatingly tall.  You have no intention of climbing it today.\n"""
-        elif "wall" in choice:
-            print """
-You don't trust your grip on the bricks in this rain. You'll have to find another way.\n"""
         elif "on" in choice and "can" in choice:
             print "\nYou clamber onto the wobbling garbage can, precariously balanced.\n"
             on_can = True
@@ -424,6 +422,9 @@ Grunting and holding your breath, you manhandle one of the filthy cans under the
                 print "\nYou push the garbage cans around aimlessly.\n"
 # The option to travel north or enter the window has to be placed after the
 #   option to push the can under the window.  See previous comment.
+        elif "wall" in choice:
+            print """
+You don't trust your grip on the bricks in this rain. You'll have to find another way.\n"""
         elif choice == "n" or "window" in choice:
             if on_can == False:
                 print "\nThe window is too high.\n"
